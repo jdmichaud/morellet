@@ -12,4 +12,10 @@ module.exports = {
       loaders: ['babel'],
     }],
   },
+  resolve: {
+    root: [
+      path.resolve('js'),
+      path.resolve('templates'),
+    ],
+  },
 };
