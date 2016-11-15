@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "outDir": ".tmp/js",
+    "rootDir": "src"
+    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11365
+    // "strictNullChecks": true
+  }
+}

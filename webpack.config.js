@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/morellet.js',
+  entry: './src/morellet.ts',
   output: {
     path: __dirname + '/dist',
     filename: 'morellet.js',
@@ -9,7 +9,10 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['babel?presets[]=es2015'],
+    }, {
+      test: /\.ts$/,
+      loaders: ['ts'],
     }],
   },
   resolve: {

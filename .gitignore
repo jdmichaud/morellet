@@ -39,3 +39,5 @@ jspm_packages
 # Output folder
 dist
 
+# Typescripts
+typings
