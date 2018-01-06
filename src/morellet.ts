@@ -133,7 +133,7 @@ function generate_svg(svgContainer, lines: Line[]) {
 function main() {
   const svgContainer = d3.select('body').append('svg')
                          .attr('viewBox', `0 0 ${window.innerWidth} ${window.innerHeight}`);
-  const dvectors = generate_vector(3, 20); // direction vectors which will generate the welt
+  const dvectors = generate_vector(3, 25); // direction vectors which will generate the welt
   // const shifts = generate_shifts(5, 10);
   const welts = dvectors.map(generate_welt.bind(null, window.innerWidth, window.innerHeight)) as Line[][];
   welts.map(generate_svg.bind(null, svgContainer));
