@@ -1,24 +1,47 @@
+'use strict';
 const path = require('path');
+
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/morellet.ts',
   output: {
-    path: __dirname + '/dist',
-    filename: 'morellet.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: 'app.js',
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel?presets[]=es2015'],
-    }, {
+    rules: [{
       test: /\.ts$/,
-      loaders: ['ts'],
+      loader: 'ts-loader',
     }],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'templates/index.html',
+      chunksSortMode: 'dependency',
+    }),
+    new CopyWebpackPlugin([{ from: 'templates' }]),
+  ],
   resolve: {
-    root: [
-      path.resolve('js'),
-      path.resolve('templates'),
+    modules: [
+      "node_modules",
+      path.resolve(__dirname, "src")
     ],
+    extensions: ['.ts', '.js', 'scss'],
   },
+
+  devServer: {
+    contentBase: path.join(process.cwd(), 'dist'),
+    clientLogLevel: 'info',
+    port: 8080,
+    inline: true,
+    historyApiFallback: false,
+    watchOptions: {
+      aggregateTimeout: 300,
+      poll: 500,
+    },
+  },
+
+  devtool: 'source-map',
 };

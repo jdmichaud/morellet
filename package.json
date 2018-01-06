@@ -4,10 +4,8 @@
   "description": "A Morellet trame generator",
   "main": "morellet.js",
   "scripts": {
-    "test": "test",
-    "webpack": "webpack",
-    "tsc": "tsc",
-    "typings": "typings",
+    "build": "webpack",
+    "serve": "webpack-dev-server",
     "tslint": "tslint src/**/*.js"
   },
   "repository": {
@@ -25,18 +23,24 @@
   },
   "homepage": "https://github.com/jdmichaud/morellet",
   "devDependencies": {
-    "babel-core": "^6.18.2",
-    "babel-loader": "^6.2.7",
-    "babel-preset-es2015": "^6.18.0",
+    "@types/d3": "^4.12.0",
+    "@types/d3-selection": "^1.0.5",
+    "@types/jquery": "^3.2.17",
+    "@types/lodash": "^4.14.92",
+    "@types/node": "^8.5.7",
+    "copy-webpack-plugin": "^4.3.1",
     "d3": "^4.3.0",
-    "file-loader": "^0.9.0",
+    "file-loader": "^1.1.6",
+    "html-webpack-plugin": "^2.30.1",
     "jquery": "^3.1.1",
-    "lodash": "^4.17.1",
-    "ts-loader": "^1.2.1",
-    "tslint-microsoft-contrib": "^2.0.13",
-    "typescript": "^2.0.9",
-    "typings": "^2.0.0",
-    "webpack": "^1.13.3",
-    "@types/d3-selection": "^1.0.5"
+    "lodash": "^4.17.4",
+    "ts-loader": "^3.2.0",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.0"
+  },
+  "dependencies": {
+    "ts-node": "^4.1.0"
   }
 }
